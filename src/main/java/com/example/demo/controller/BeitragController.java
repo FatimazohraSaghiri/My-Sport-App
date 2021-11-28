@@ -17,13 +17,14 @@ public class BeitragController {
         return beitragService.beitragSpeichern(email, beitragDto);
     }
 
-    @PostMapping("/beitrag/aktu/{id}")
+    @PostMapping("/beitrag/aktualisiren/{id}")
     public ResponseEntity<Beitrag> beitragAktualisieren(@PathVariable long id, @RequestBody BeitragDto beitragDto) {
         return beitragService.beitragAktualisieren(beitragDto, id);
     }
 
     @GetMapping("/beitrag/delete/{id}")
     public ResponseEntity<Beitrag> beitragloeschen(@PathVariable long id) {
+
         return beitragService.beitragloeschen(id);
     }
 }

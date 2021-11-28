@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +19,9 @@ import java.util.Date;
 public class Kommentar {
     String inhalt;
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "erstellt_an", nullable = false, updatable = false)
+    @Column(name = "erstellt_an")
     @CreatedDate
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ")
     Date date;
 
     @Id
