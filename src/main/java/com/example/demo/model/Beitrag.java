@@ -31,4 +31,6 @@ public class Beitrag {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "beitrag")
     private List<Kommentar> kommentar = new ArrayList<>();
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Bewertung bewertung;
 }

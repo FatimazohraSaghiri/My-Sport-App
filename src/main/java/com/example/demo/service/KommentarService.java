@@ -1,7 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Beitrag;
-import com.example.demo.model.Benutzer;
 import com.example.demo.model.Kommentar;
 import com.example.demo.repository.BeitragRepository;
 import com.example.demo.repository.BenutzerRepository;
@@ -23,15 +21,19 @@ public class KommentarService {
 
     //Kommentar verfassen
     public ResponseEntity<String> kommentarVerfassen(Long BeitragId, Long BenutzerId, KommentarDto kommentarDto) {
-        Beitrag beitrag = beitragRepository.findBeitragById(BeitragId);
-        Benutzer benutzer = benutzerRepository.findBenutzerById(BenutzerId);
-        Kommentar kommentar = new Kommentar();
-        kommentar.setInhalt(kommentarDto.getInhalt());
-        kommentar.setDate(kommentarDto.getDate());
-        kommentar.setBeitrag(beitrag);
-        kommentar.setBenutzer(benutzer);
-        kommentarRepository.save(kommentar);
-        return new ResponseEntity<>(HttpStatus.OK);
+        beitragRepository.findById(BeitragId).ifPresent(beitrag -> {
+            benutzerRepository.findById(BenutzerId).ifPresent(benutzer -> {
+                Kommentar kommentar = new Kommentar();
+                kommentar.setInhalt(kommentarDto.getInhalt());
+                kommentar.setDate(kommentarDto.getDate());
+                kommentar.setBeitrag(beitrag);
+                kommentar.setBenutzer(benutzer);
+                kommentarRepository.save(kommentar);
+            });
+        });
+
+
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     //Kommentar bearbeiten

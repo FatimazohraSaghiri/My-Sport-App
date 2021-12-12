@@ -5,9 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.util.Date;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,6 +15,10 @@ import java.util.Date;
 @Entity
 @Table(name = "bewertung")
 public class Bewertung {
-    private int AnzahlStr;
-    private Date datum;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "bewertung_id", insertable = false, updatable = true)
+    private Long id;
+    private int anzahlStr;
+    private LocalDateTime datum;
 }
