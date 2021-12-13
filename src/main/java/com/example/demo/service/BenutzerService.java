@@ -27,7 +27,7 @@ public class BenutzerService {
         String toAdress = benutzerDto.getEmail();
     }
 
-    // Benutzer registrieren
+    // Benutzer registration
     public ResponseEntity<String> registerBenutzer(BenutzerDto benutzerDto) {
         String randomCode = RandomString.make(64);
         Benutzer benutzer = Benutzer.builder()
