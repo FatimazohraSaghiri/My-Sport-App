@@ -17,7 +17,7 @@ public class BenutzerController {
     private final BenutzerService benutzerService;
 
     @PostMapping("/benutzer")
-    public ResponseEntity<String> addBenutzer(@RequestBody BenutzerDto benutzerDto) {
+    public ResponseEntity<Benutzer> addBenutzer(@RequestBody BenutzerDto benutzerDto) {
         return benutzerService.registerBenutzer(benutzerDto);
     }
 
@@ -25,4 +25,13 @@ public class BenutzerController {
     public ResponseEntity<Benutzer> updateBenutzer(@PathVariable long id, @RequestBody BenutzerDto benutzerDto) {
         return benutzerService.updateBenutzer(benutzerDto, id);
     }
+
+    @PostMapping("/anmelden/{id}")
+    public ResponseEntity<Benutzer> anmelden(@PathVariable long id, @RequestBody BenutzerDto benutzerDto) {
+        return benutzerService.anmelden(id, benutzerDto);
+    }
+
+    //@GetMapping()
+    //public BenutzerDto getBenutzer()
+
 }

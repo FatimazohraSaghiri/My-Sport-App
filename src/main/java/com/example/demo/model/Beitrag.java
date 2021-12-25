@@ -1,9 +1,7 @@
 package com.example.demo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.example.demo.enums.KategorieEnum;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,9 +16,9 @@ import java.util.List;
 public class Beitrag {
     private String titel;
     private String inhalt;
-    // private String character;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", insertable = false, updatable = true)
     private Long id;
 
@@ -33,4 +31,10 @@ public class Beitrag {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Bewertung bewertung;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    @NonNull
+    private KategorieEnum kategorie;
+
 }

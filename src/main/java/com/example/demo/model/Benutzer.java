@@ -13,11 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "benutzer", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "benutzer", uniqueConstraints = @UniqueConstraint(columnNames = "adresse"))
 public class Benutzer implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "benutzer_id", insertable = false, updatable = true)
     private Long id;
 
@@ -31,13 +31,10 @@ public class Benutzer implements Serializable {
 
     private String vorname;
 
-    //@Column(nullable = false, unique = true)
-    private String email;
-
     @Column(nullable = false)
     private String passwort;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String adresse;
 
     @Column(nullable = false)

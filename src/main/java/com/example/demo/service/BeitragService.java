@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
+
 @Builder
 @AllArgsConstructor
 @Service
@@ -23,7 +25,8 @@ public class BeitragService {
         Beitrag beitrag = new Beitrag();
         beitrag.setTitel(beitragDto.getTitel());
         beitrag.setInhalt(beitragDto.getInhalt());
-        Benutzer benutzer = benutzerRepository.findByEmail(email);
+        beitrag.setKategorie(beitragDto.getKategorie());
+        Benutzer benutzer = benutzerRepository.findByAdresse(email);
         beitrag.setBenutzer(benutzer);
         beitragRepository.save(beitrag);
         return new ResponseEntity<>(HttpStatus.CREATED);
@@ -46,6 +49,13 @@ public class BeitragService {
     public ResponseEntity<Beitrag> beitragloeschen(Long id) {
         Beitrag beitrag = beitragRepository.findById(id).get();
         beitragRepository.delete(beitrag);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    //Beitrag nach kategorie suchen
+    public ResponseEntity<Beitrag> beitragSuchen(String kategorie) {
+        LinkedList<String> kategorieList = new LinkedList<String>();
+        Beitrag beitrag;
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

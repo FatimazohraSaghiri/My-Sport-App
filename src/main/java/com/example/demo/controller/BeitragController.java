@@ -22,7 +22,7 @@ public class BeitragController {
         return beitragService.beitragAktualisieren(beitragDto, id);
     }
 
-    @GetMapping("/beitrag/delete/{id}")
+    @DeleteMapping("/beitrag/{id}")
     public ResponseEntity<Beitrag> beitragloeschen(@PathVariable long id) {
 
         return beitragService.beitragloeschen(id);

@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @Builder
 @Service
@@ -25,7 +27,7 @@ public class KommentarService {
             benutzerRepository.findById(BenutzerId).ifPresent(benutzer -> {
                 Kommentar kommentar = new Kommentar();
                 kommentar.setInhalt(kommentarDto.getInhalt());
-                kommentar.setDate(kommentarDto.getDate());
+                kommentar.setErstellt_an(LocalDateTime.now());
                 kommentar.setBeitrag(beitrag);
                 kommentar.setBenutzer(benutzer);
                 kommentarRepository.save(kommentar);

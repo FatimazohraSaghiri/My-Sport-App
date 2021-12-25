@@ -22,7 +22,7 @@ public class KommentarController {
         return kommentarService.kommentarBearbeiten(id, kommentarDto);
     }
 
-    @GetMapping("/kommentar/delete/{id}")
+    @DeleteMapping("/kommentar/delete/{id}")
     public ResponseEntity<Kommentar> kommentarLoeschen(@PathVariable Long id) {
         return kommentarService.kommentarLoeschen(id);
     }
