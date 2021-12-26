@@ -2,10 +2,7 @@ package com.example.demo.web.dto;
 
 import com.example.demo.model.Beitrag;
 import com.example.demo.model.Benutzer;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +10,9 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class KommentarDto {
+    private Long idKommentar;
     String inhalt;
     LocalDateTime erstellt_an;
     Beitrag beitrag;

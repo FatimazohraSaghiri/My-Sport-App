@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_13_12_2021_12_07_[Changes]" date="1639393654637" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2021_12_07_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 13.12.2021 12:07 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value=".mvn/wrapper/maven-wrapper.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2021_12_07_[Changes]/maven-wrapper.jar" />
+  </binary>
+</changelist>

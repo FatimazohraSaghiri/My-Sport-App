@@ -5,10 +5,7 @@ import com.example.demo.service.BenutzerService;
 import com.example.demo.web.dto.BenutzerDto;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -21,17 +18,19 @@ public class BenutzerController {
         return benutzerService.registerBenutzer(benutzerDto);
     }
 
-    @PostMapping("/benutzer/{id}")
+    @PostMapping("/benutzer/{idBenutzer}")
     public ResponseEntity<Benutzer> updateBenutzer(@PathVariable long id, @RequestBody BenutzerDto benutzerDto) {
         return benutzerService.updateBenutzer(benutzerDto, id);
     }
 
-    @PostMapping("/anmelden/{id}")
+    @PostMapping("/anmelden/{idBenutzer}")
     public ResponseEntity<Benutzer> anmelden(@PathVariable long id, @RequestBody BenutzerDto benutzerDto) {
         return benutzerService.anmelden(id, benutzerDto);
     }
 
-    //@GetMapping()
-    //public BenutzerDto getBenutzer()
+    @GetMapping("/{email}")
+    public BenutzerDto getBenutzer(@PathVariable String email) {
+        return benutzerService.getBenutzer(email);
+    }
 
 }
