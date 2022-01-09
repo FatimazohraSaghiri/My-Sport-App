@@ -17,6 +17,7 @@ public class BenutzerDto {
     private String passwort;
     private String adresse;
     private String beschreibung;
+    private boolean enable;
     private List<KommentarDto> kommentarList;
     private List<BeitragDto> beitragList;
 }

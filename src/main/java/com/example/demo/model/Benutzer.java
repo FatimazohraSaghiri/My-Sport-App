@@ -43,6 +43,7 @@ public class Benutzer implements Serializable {
     private String verificationCode;
 
     private boolean enabled;
-
-
 }
+
+
+

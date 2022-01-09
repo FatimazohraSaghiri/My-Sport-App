@@ -13,19 +13,19 @@ public class BenutzerController {
 
     private final BenutzerService benutzerService;
 
-    @PostMapping("/benutzer")
-    public ResponseEntity<Benutzer> addBenutzer(@RequestBody BenutzerDto benutzerDto) {
+    @PostMapping("/registerbenutzer")
+    public ResponseEntity<Benutzer> registerBenutzer(@RequestBody BenutzerDto benutzerDto) {
         return benutzerService.registerBenutzer(benutzerDto);
     }
 
     @PostMapping("/benutzer/{idBenutzer}")
-    public ResponseEntity<Benutzer> updateBenutzer(@PathVariable long id, @RequestBody BenutzerDto benutzerDto) {
-        return benutzerService.updateBenutzer(benutzerDto, id);
+    public ResponseEntity<Benutzer> updateBenutzer(@PathVariable long idBenutzer, @RequestBody BenutzerDto benutzerDto) {
+        return benutzerService.updateBenutzer(benutzerDto, idBenutzer);
     }
 
     @PostMapping("/anmelden/{idBenutzer}")
-    public ResponseEntity<Benutzer> anmelden(@PathVariable long id, @RequestBody BenutzerDto benutzerDto) {
-        return benutzerService.anmelden(id, benutzerDto);
+    public ResponseEntity<Benutzer> anmelden(@PathVariable long idBenutzer, @RequestBody BenutzerDto benutzerDto) {
+        return benutzerService.anmelden(idBenutzer, benutzerDto);
     }
 
     @GetMapping("/{email}")

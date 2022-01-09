@@ -14,7 +14,7 @@ public class BeitragController {
 
     @PostMapping("/beitrag/add/{email}")
     public ResponseEntity<String> addBeitrag(@PathVariable("email") String email, @RequestBody BeitragDto beitragDto) {
-        return beitragService.beitragSpeichern(email, beitragDto);
+        return beitragService.addBeitrag(email, beitragDto);
     }
 
     @PostMapping("/beitrag/aktualisiren/{id}")
@@ -24,7 +24,7 @@ public class BeitragController {
 
     @DeleteMapping("/beitrag/{id}")
     public ResponseEntity<Beitrag> beitragloeschen(@PathVariable long id) {
-
         return beitragService.beitragloeschen(id);
     }
+    
 }

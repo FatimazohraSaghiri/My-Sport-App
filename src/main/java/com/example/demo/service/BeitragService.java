@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.enums.KategorieEnum;
 import com.example.demo.model.Beitrag;
 import com.example.demo.model.Benutzer;
 import com.example.demo.repository.BeitragRepository;
@@ -11,8 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
-
 @Builder
 @AllArgsConstructor
 @Service
@@ -21,7 +20,7 @@ public class BeitragService {
     private final BenutzerRepository benutzerRepository;
 
     //Beitrag speichern
-    public ResponseEntity<String> beitragSpeichern(String email, BeitragDto beitragDto) {
+    public ResponseEntity<String> addBeitrag(String email, BeitragDto beitragDto) {
         Beitrag beitrag = new Beitrag();
         beitrag.setTitel(beitragDto.getTitel());
         beitrag.setInhalt(beitragDto.getInhalt());
@@ -54,8 +53,19 @@ public class BeitragService {
 
     //Beitrag nach kategorie suchen
     public ResponseEntity<Beitrag> beitragSuchen(String kategorie) {
-        LinkedList<String> kategorieList = new LinkedList<String>();
-        Beitrag beitrag;
-        return new ResponseEntity<>(HttpStatus.OK);
+        boolean gefunden = true;
+        for (KategorieEnum kategorieEnum : KategorieEnum.values()) {
+            if (KategorieEnum.values().equals(kategorie)) {
+                gefunden = true;
+                break;
+            } else {
+                gefunden = false;
+            }
+        }
+        if (gefunden == true) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }

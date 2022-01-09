@@ -41,7 +41,7 @@ public class BenutzerService {
                 .adresse(benutzerDto.getAdresse())
                 .beschreibung(benutzerDto.getBeschreibung())
                 .verificationCode(randomCode)
-                .enabled(false)
+                .enabled(true)
                 .build();
         this.benutzerRepository.save(benutzer);
         return new ResponseEntity<>(HttpStatus.CREATED);
@@ -49,15 +49,16 @@ public class BenutzerService {
 
     // Benutzer anmelden
     public ResponseEntity<Benutzer> anmelden(Long id, BenutzerDto benutzerDto) {
-        Benutzer benutzer = benutzerRepository.findById(id).get();
-        if (benutzer.getName().equals(benutzerDto.getName()) && benutzer.getPasswort().equals(benutzerDto.getPasswort())) {
+        Benutzer benutzer = benutzerRepository.findByAdresse(benutzerDto.getAdresse());
+        if (benutzer.getAdresse().equals(benutzerDto.getAdresse()) && benutzer.getPasswort().equals(benutzerDto.getPasswort()) && benutzer.isEnabled()
+        ) {
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
 
-    // Benutzer aktualisieren
+    // ProfilBenutzer bearbeitens
     public ResponseEntity<Benutzer> updateBenutzer(BenutzerDto benutzerDto, Long id) {
         Benutzer benutzer = this.benutzerRepository.findById(id).get();
         if (benutzerDto.getName() != null) {
@@ -117,6 +118,7 @@ public class BenutzerService {
                         .build()
         ).collect(Collectors.toList());
         benutzerDto.setKommentarList(kommentarDtoList);
+
         List<BeitragDto> beitragDtoList = benutzer.getBeitraege().stream().map(beitrag ->
                 BeitragDto.builder()
                         .idBeitrag(beitrag.getId())
