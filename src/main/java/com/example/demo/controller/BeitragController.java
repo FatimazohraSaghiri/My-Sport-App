@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
 public class BeitragController {
@@ -26,5 +28,9 @@ public class BeitragController {
     public ResponseEntity<Beitrag> beitragloeschen(@PathVariable long id) {
         return beitragService.beitragloeschen(id);
     }
-    
+
+    @GetMapping("/beitraege")
+    List<Beitrag> all() {
+        return beitragService.all();
+    }
 }

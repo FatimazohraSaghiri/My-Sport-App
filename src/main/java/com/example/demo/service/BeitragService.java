@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Builder
 @AllArgsConstructor
 @Service
@@ -68,4 +70,9 @@ public class BeitragService {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    public List<Beitrag> all() {
+        return beitragRepository.findAll();
+    }
 }
+

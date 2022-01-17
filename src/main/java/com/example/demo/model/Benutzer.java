@@ -36,11 +36,8 @@ public class Benutzer implements Serializable {
 
     @Column(nullable = false, unique = true)
     private String adresse;
-
-    @Column()
+    
     private String beschreibung;
-
-    private String verificationCode;
 
     private boolean enabled;
 }

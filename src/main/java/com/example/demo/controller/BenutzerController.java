@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Benutzer;
 import com.example.demo.service.BenutzerService;
 import com.example.demo.web.dto.BenutzerDto;
+import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +24,9 @@ public class BenutzerController {
         return benutzerService.updateBenutzer(benutzerDto, idBenutzer);
     }
 
-    @PostMapping("/anmelden/{idBenutzer}")
-    public ResponseEntity<Benutzer> anmelden(@PathVariable long idBenutzer, @RequestBody BenutzerDto benutzerDto) {
-        return benutzerService.anmelden(idBenutzer, benutzerDto);
+    @PostMapping("/anmelden")
+    public ResponseEntity<Benutzer> anmelden(@RequestBody BenutzerDto benutzerDto) throws NotFoundException {
+        return benutzerService.anmelden(benutzerDto);
     }
 
     @GetMapping("/{email}")

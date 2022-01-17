@@ -5,16 +5,14 @@ import com.example.demo.repository.BenutzerRepository;
 import com.example.demo.web.dto.BeitragDto;
 import com.example.demo.web.dto.BenutzerDto;
 import com.example.demo.web.dto.KommentarDto;
+import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import net.bytebuddy.utility.RandomString;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import javax.mail.internet.MimeMessage;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,12 +22,6 @@ import java.util.stream.Collectors;
 public class BenutzerService {
 
     private final BenutzerRepository benutzerRepository;
-    private JavaMailSender mailSender;
-
-    // Verificationsemail nach der Registrierung senden
-    private void sendVerificationEmail(BenutzerDto benutzerDto, String siteURL) {
-        String toAdress = benutzerDto.getEmail();
-    }
 
     // Benutzer registration
     public ResponseEntity<Benutzer> registerBenutzer(BenutzerDto benutzerDto) {
@@ -40,7 +32,6 @@ public class BenutzerService {
                 .passwort(benutzerDto.getPasswort())
                 .adresse(benutzerDto.getAdresse())
                 .beschreibung(benutzerDto.getBeschreibung())
-                .verificationCode(randomCode)
                 .enabled(true)
                 .build();
         this.benutzerRepository.save(benutzer);
@@ -48,14 +39,15 @@ public class BenutzerService {
     }
 
     // Benutzer anmelden
-    public ResponseEntity<Benutzer> anmelden(Long id, BenutzerDto benutzerDto) {
+    public ResponseEntity<Benutzer> anmelden(BenutzerDto benutzerDto) throws NotFoundException {
         Benutzer benutzer = benutzerRepository.findByAdresse(benutzerDto.getAdresse());
-        if (benutzer.getAdresse().equals(benutzerDto.getAdresse()) && benutzer.getPasswort().equals(benutzerDto.getPasswort()) && benutzer.isEnabled()
-        ) {
-            return new ResponseEntity<>(HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        if (benutzer == null) {
+            throw new NotFoundException("Benutzer existiert nicht " + benutzerDto.getAdresse());
+        } else if (!benutzer.getAdresse().equals(benutzerDto.getAdresse()) || !benutzer.getPasswort().
+                equals(benutzerDto.getPasswort())) {
+            throw new NotFoundException("Email oder Passwort ist falsch");
         }
+        return new ResponseEntity<>(benutzer, HttpStatus.OK);
     }
 
     // ProfilBenutzer bearbeitens
@@ -80,27 +72,7 @@ public class BenutzerService {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-
-    private void sendVerificationEmail(Benutzer benutzer, String siteURL) {
-        String toAddress = benutzer.getAdresse();
-        MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message);
-
-    }
-
-    public boolean verify(String verificationCode) {
-        Benutzer benutzer = benutzerRepository.findByVerificationCode(verificationCode);
-
-        if (benutzer == null || benutzer.isEnabled()) {
-            return false;
-        } else {
-            benutzer.setVerificationCode(null);
-            benutzer.setEnabled(true);
-            benutzerRepository.save(benutzer);
-            return true;
-        }
-    }
-
+    // Output für alle Daten von Benutzer
     public BenutzerDto getBenutzer(String email) {
         Benutzer benutzer = benutzerRepository.findByAdresse(email);
         BenutzerDto benutzerDto = new BenutzerDto();
@@ -118,7 +90,6 @@ public class BenutzerService {
                         .build()
         ).collect(Collectors.toList());
         benutzerDto.setKommentarList(kommentarDtoList);
-
         List<BeitragDto> beitragDtoList = benutzer.getBeitraege().stream().map(beitrag ->
                 BeitragDto.builder()
                         .idBeitrag(beitrag.getId())

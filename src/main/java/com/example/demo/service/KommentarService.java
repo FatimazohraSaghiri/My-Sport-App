@@ -33,8 +33,6 @@ public class KommentarService {
                 kommentarRepository.save(kommentar);
             });
         });
-
-
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

@@ -9,6 +9,5 @@ public interface BenutzerRepository extends JpaRepository<Benutzer, Long> {
 
     public Benutzer findByAdresse(String adresse);
 
-    Benutzer findByVerificationCode(String verificationCode);
 
 }
