@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -73,6 +74,15 @@ public class BeitragService {
 
     public List<Beitrag> all() {
         return beitragRepository.findAll();
+    }
+
+    //Kategorie Liste
+    public List<KategorieEnum> kategorieList() {
+        List<KategorieEnum> kategorieListe = new ArrayList();
+        for (KategorieEnum kategorieEnum : KategorieEnum.values()) {
+            kategorieListe.add(kategorieEnum);
+        }
+        return kategorieListe;
     }
 }
 

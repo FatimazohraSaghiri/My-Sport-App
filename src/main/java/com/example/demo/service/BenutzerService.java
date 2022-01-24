@@ -8,7 +8,6 @@ import com.example.demo.web.dto.KommentarDto;
 import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import net.bytebuddy.utility.RandomString;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -20,15 +19,13 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Service
 public class BenutzerService {
-
     private final BenutzerRepository benutzerRepository;
 
     // Benutzer registration
     public ResponseEntity<Benutzer> registerBenutzer(BenutzerDto benutzerDto) {
-        String randomCode = RandomString.make(64);
         Benutzer benutzer = Benutzer.builder()
                 .vorname(benutzerDto.getVorname())
-                .name(benutzerDto.getName())
+                .nachname(benutzerDto.getNachname())
                 .passwort(benutzerDto.getPasswort())
                 .adresse(benutzerDto.getAdresse())
                 .beschreibung(benutzerDto.getBeschreibung())
@@ -53,8 +50,8 @@ public class BenutzerService {
     // ProfilBenutzer bearbeitens
     public ResponseEntity<Benutzer> updateBenutzer(BenutzerDto benutzerDto, Long id) {
         Benutzer benutzer = this.benutzerRepository.findById(id).get();
-        if (benutzerDto.getName() != null) {
-            benutzer.setName(benutzerDto.getName());
+        if (benutzerDto.getNachname() != null) {
+            benutzer.setNachname(benutzerDto.getNachname());
         }
         if (benutzerDto.getVorname() != null && !benutzerDto.getVorname().isBlank()) {
             benutzer.setVorname(benutzerDto.getVorname());
@@ -77,7 +74,7 @@ public class BenutzerService {
         Benutzer benutzer = benutzerRepository.findByAdresse(email);
         BenutzerDto benutzerDto = new BenutzerDto();
         benutzerDto.setIdBenutzer(benutzer.getId());
-        benutzerDto.setName(benutzer.getName());
+        benutzerDto.setNachname(benutzer.getNachname());
         benutzerDto.setVorname(benutzer.getVorname());
         benutzerDto.setAdresse(benutzer.getAdresse());
         benutzerDto.setPasswort(benutzer.getPasswort());

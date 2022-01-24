@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.enums.KategorieEnum;
 import com.example.demo.model.Beitrag;
 import com.example.demo.service.BeitragService;
 import com.example.demo.web.dto.BeitragDto;
@@ -32,5 +33,10 @@ public class BeitragController {
     @GetMapping("/beitraege")
     List<Beitrag> all() {
         return beitragService.all();
+    }
+
+    @GetMapping("/kategorieListe")
+    public List<KategorieEnum> kategorieListe() {
+        return beitragService.kategorieList();
     }
 }

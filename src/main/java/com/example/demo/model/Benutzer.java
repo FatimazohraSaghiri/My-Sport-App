@@ -27,16 +27,16 @@ public class Benutzer implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "benutzer")
     private List<Kommentar> kommentars = new ArrayList<>();
 
-    private String name;
-
     private String vorname;
+
+    private String nachname;
 
     @Column(nullable = false)
     private String passwort;
 
     @Column(nullable = false, unique = true)
     private String adresse;
-    
+
     private String beschreibung;
 
     private boolean enabled;
