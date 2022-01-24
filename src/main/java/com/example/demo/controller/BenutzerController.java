@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.enums.ProfissionEnum;
 import com.example.demo.model.Benutzer;
 import com.example.demo.service.BenutzerService;
 import com.example.demo.web.dto.BenutzerDto;
@@ -7,6 +8,8 @@ import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -34,4 +37,8 @@ public class BenutzerController {
         return benutzerService.getBenutzer(email);
     }
 
+    @GetMapping("/profission")
+    public List<ProfissionEnum> profissionEnumList() {
+        return benutzerService.profissionEnumList();
+    }
 }
