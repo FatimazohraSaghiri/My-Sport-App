@@ -21,4 +21,8 @@ public class Bewertung {
     private Long id;
     private int anzahlStr;
     private LocalDateTime datum;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "beitrag_id", nullable = false)
+    private Beitrag beitrag;
 }

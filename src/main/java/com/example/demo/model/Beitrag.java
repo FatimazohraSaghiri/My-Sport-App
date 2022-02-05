@@ -29,9 +29,8 @@ public class Beitrag {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "beitrag")
     private List<Kommentar> kommentar = new ArrayList<>();
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Bewertung bewertung;
-
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Bewertung> bewertung = new ArrayList<>();
     @Column
     @Enumerated(EnumType.STRING)
     @NonNull
