@@ -36,4 +36,7 @@ public class Beitrag {
     @NonNull
     private KategorieEnum kategorie;
 
+    public void setKategorieString(@NonNull KategorieEnum stg) {
+        kategorie = stg;
+    }
 }

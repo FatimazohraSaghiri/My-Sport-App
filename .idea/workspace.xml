@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="get ProfissionListe einfügen">
+    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="Bewertung Klass bearbeiten">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BewertungController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BewertungController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Beitrag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Beitrag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Bewertung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Bewertung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BewertungService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BewertungService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BenutzerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BenutzerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BewertungDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BewertungDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BewertungController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BewertungController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Beitrag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Beitrag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Bewertung.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Bewertung.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService$BewertungServiceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService$BewertungServiceBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643030032563</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Bewertung Klass bearbeiten">
+      <created>1644078833832</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1644078833832</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,7 +248,8 @@
     <MESSAGE value="anmelden ohne id" />
     <MESSAGE value="get kategorieListe einfügen + name ändern" />
     <MESSAGE value="get ProfissionListe einfügen" />
-    <option name="LAST_COMMIT_MESSAGE" value="get ProfissionListe einfügen" />
+    <MESSAGE value="Bewertung Klass bearbeiten" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bewertung Klass bearbeiten" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

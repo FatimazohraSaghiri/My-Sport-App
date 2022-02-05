@@ -27,7 +27,7 @@ public class BeitragService {
         Beitrag beitrag = new Beitrag();
         beitrag.setTitel(beitragDto.getTitel());
         beitrag.setInhalt(beitragDto.getInhalt());
-        beitrag.setKategorie(beitragDto.getKategorie());
+        beitrag.setKategorieString(beitragDto.getKategorie());
         Benutzer benutzer = benutzerRepository.findByAdresse(email);
         beitrag.setBenutzer(benutzer);
         beitragRepository.save(beitrag);
