@@ -22,16 +22,14 @@ public class KommentarService {
     private final BenutzerRepository benutzerRepository;
 
     //Kommentar verfassen
-    public ResponseEntity<String> kommentarVerfassen(Long BeitragId, Long BenutzerId, KommentarDto kommentarDto) {
+    public ResponseEntity<String> kommentarVerfassen(Long BeitragId, KommentarDto kommentarDto) {
         beitragRepository.findById(BeitragId).ifPresent(beitrag -> {
-            benutzerRepository.findById(BenutzerId).ifPresent(benutzer -> {
-                Kommentar kommentar = new Kommentar();
-                kommentar.setInhalt(kommentarDto.getInhalt());
-                kommentar.setErstellt_an(LocalDateTime.now());
-                kommentar.setBeitrag(beitrag);
-                kommentar.setBenutzer(benutzer);
-                kommentarRepository.save(kommentar);
-            });
+            Kommentar kommentar = new Kommentar();
+            kommentar.setInhalt(kommentarDto.getInhalt());
+            kommentar.setErstellt_an(LocalDateTime.now());
+            kommentar.setBeitrag(beitrag);
+            kommentar.setBenutzer(beitrag.getBenutzer());
+            kommentarRepository.save(kommentar);
         });
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 public class KommentarController {
     private final KommentarService kommentarService;
 
-    @PostMapping("/kommentar/add/{idBeitrag}/{idBenutzer}")
-    public ResponseEntity<String> KommentarEinfuegen(@PathVariable Long idBeitrag, @PathVariable Long idBenutzer, @RequestBody KommentarDto kommentarDto) {
-        return kommentarService.kommentarVerfassen(idBeitrag, idBenutzer, kommentarDto);
+    @PostMapping("/kommentar/add/{idBeitrag}")
+    public ResponseEntity<String> KommentarEinfuegen(@PathVariable Long idBeitrag, @RequestBody KommentarDto kommentarDto) {
+        return kommentarService.kommentarVerfassen(idBeitrag, kommentarDto);
     }
 
     @PostMapping("kommentar/aktualisieren/{id}")
@@ -26,5 +26,5 @@ public class KommentarController {
     public ResponseEntity<Kommentar> kommentarLoeschen(@PathVariable Long id) {
         return kommentarService.kommentarLoeschen(id);
     }
-    
+
 }

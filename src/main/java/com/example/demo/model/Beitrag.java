@@ -9,6 +9,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Getter
 @Setter
 @Entity
@@ -29,14 +30,11 @@ public class Beitrag {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "beitrag")
     private List<Kommentar> kommentar = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "beitrag")
     private List<Bewertung> bewertung = new ArrayList<>();
     @Column
     @Enumerated(EnumType.STRING)
     @NonNull
     private KategorieEnum kategorie;
 
-    public void setKategorieString(@NonNull KategorieEnum stg) {
-        kategorie = stg;
-    }
 }

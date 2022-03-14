@@ -6,7 +6,6 @@ import com.example.demo.repository.BenutzerRepository;
 import com.example.demo.web.dto.BeitragDto;
 import com.example.demo.web.dto.BenutzerDto;
 import com.example.demo.web.dto.KommentarDto;
-import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import org.springframework.http.HttpStatus;
@@ -24,50 +23,46 @@ public class BenutzerService {
     private final BenutzerRepository benutzerRepository;
 
     // Benutzer registration
-    public ResponseEntity<Benutzer> registerBenutzer(BenutzerDto benutzerDto) {
-        Benutzer benutzer = Benutzer.builder()
-                .vorname(benutzerDto.getVorname())
-                .nachname(benutzerDto.getNachname())
-                .passwort(benutzerDto.getPasswort())
-                .adresse(benutzerDto.getAdresse())
-                .beschreibung(benutzerDto.getBeschreibung())
-                .enabled(true)
-                .build();
+    public ResponseEntity<Benutzer> registerBenutzer(Benutzer benutzer) {
+        benutzer.setEnabled(true);
         this.benutzerRepository.save(benutzer);
+        // nach erfolgreiche Registrierung wird Response als Created ausgegeben
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     // Benutzer anmelden
-    public ResponseEntity<Benutzer> anmelden(BenutzerDto benutzerDto) throws NotFoundException {
-        Benutzer benutzer = benutzerRepository.findByAdresse(benutzerDto.getAdresse());
-        if (benutzer == null) {
-            throw new NotFoundException("Benutzer existiert nicht " + benutzerDto.getAdresse());
-        } else if (!benutzer.getAdresse().equals(benutzerDto.getAdresse()) || !benutzer.getPasswort().
-                equals(benutzerDto.getPasswort())) {
-            throw new NotFoundException("Email oder Passwort ist falsch");
+    public ResponseEntity<String> anmelden(Benutzer benutzer) {
+        Benutzer Newbenutzer = benutzerRepository.findByAdresse(benutzer.getAdresse());
+        if (Newbenutzer == null) {
+            return new ResponseEntity<String>("diese Email existiert nicht", HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(benutzer, HttpStatus.OK);
+        //hier wird überprüft,ob die Adresse oder dass Passwort  falsch sind
+        else if (!Newbenutzer.getPasswort().equals(benutzer.getPasswort())) {
+            return new ResponseEntity<String>("Passwort ist falsch ", HttpStatus.NOT_ACCEPTABLE);
+        }
+        // wenn die Adresse und Passwort richtig sind
+        return new ResponseEntity<String>("Sie sind erfolgreich angemeldet", HttpStatus.OK);
     }
 
     // ProfilBenutzer bearbeitens
-    public ResponseEntity<Benutzer> updateBenutzer(BenutzerDto benutzerDto, Long id) {
-        Benutzer benutzer = this.benutzerRepository.findById(id).get();
-        if (benutzerDto.getNachname() != null) {
-            benutzer.setNachname(benutzerDto.getNachname());
+    public ResponseEntity<Benutzer> updateBenutzer(Benutzer benutzer, Long id) {
+        Benutzer Newbenutzer = this.benutzerRepository.findById(id).get();
+        if (benutzer.getNachname() != null) {
+            Newbenutzer.setNachname(benutzer.getNachname());
         }
-        if (benutzerDto.getVorname() != null && !benutzerDto.getVorname().isBlank()) {
-            benutzer.setVorname(benutzerDto.getVorname());
+        if (benutzer.getVorname() != null && !benutzer.getVorname().isBlank()) {
+            Newbenutzer.setVorname(benutzer.getVorname());
         }
-        if (benutzerDto.getPasswort() != null && !benutzerDto.getPasswort().isBlank()) {
-            benutzer.setPasswort(benutzerDto.getPasswort());
+        if (benutzer.getPasswort() != null && !benutzer.getPasswort().isBlank()) {
+            Newbenutzer.setPasswort(benutzer.getPasswort());
         }
-        if (benutzerDto.getAdresse() != null && !benutzerDto.getAdresse().isBlank()) {
-            benutzer.setAdresse(benutzerDto.getAdresse());
+        if (benutzer.getAdresse() != null && !benutzer.getAdresse().isBlank()) {
+            Newbenutzer.setAdresse(benutzer.getAdresse());
         }
-        if (benutzerDto.getBeschreibung() != null && !benutzerDto.getBeschreibung().isBlank()) {
-            benutzer.setBeschreibung(benutzerDto.getBeschreibung());
+        if (benutzer.getBeschreibung() != null && !benutzer.getBeschreibung().isBlank()) {
+            Newbenutzer.setBeschreibung(benutzer.getBeschreibung());
         }
-        this.benutzerRepository.save(benutzer);
+        this.benutzerRepository.save(Newbenutzer);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

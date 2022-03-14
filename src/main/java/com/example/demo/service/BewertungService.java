@@ -23,7 +23,7 @@ public class BewertungService {
     private final BewertungRepository bewertungRepository;
 
     public ResponseEntity<Bewertung> beitragBewerten(Long idBeitrag, BewertungDto bewertungDto) throws NotFoundException {
-        if (bewertungDto.getAnzahlStr() > 0 && bewertungDto.getAnzahlStr() < 5) {
+        if (bewertungDto.getAnzahlStr() < 0 && bewertungDto.getAnzahlStr() > 5) {
             throw new NotFoundException("die Anzahl sollte zwischen 1 und 5 sein ");
         } else {
             beitragRepository.findById(idBeitrag).ifPresent(beitrag -> {

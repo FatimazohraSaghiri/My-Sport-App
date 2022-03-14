@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,9 +23,11 @@ public class Benutzer implements Serializable {
     private Long id;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "benutzer")
+    @JsonIgnore
     private List<Beitrag> beitraege = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "benutzer")
+    @JsonIgnore
     private List<Kommentar> kommentars = new ArrayList<>();
 
     private String vorname;

@@ -5,7 +5,6 @@ import com.example.demo.model.Beitrag;
 import com.example.demo.model.Benutzer;
 import com.example.demo.repository.BeitragRepository;
 import com.example.demo.repository.BenutzerRepository;
-import com.example.demo.web.dto.BeitragDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import org.springframework.http.HttpStatus;
@@ -23,27 +22,23 @@ public class BeitragService {
     private final BenutzerRepository benutzerRepository;
 
     //Beitrag speichern
-    public ResponseEntity<String> addBeitrag(String email, BeitragDto beitragDto) {
-        Beitrag beitrag = new Beitrag();
-        beitrag.setTitel(beitragDto.getTitel());
-        beitrag.setInhalt(beitragDto.getInhalt());
-        beitrag.setKategorieString(beitragDto.getKategorie());
+    public ResponseEntity<Beitrag> addBeitrag(String email, Beitrag beitrag) {
         Benutzer benutzer = benutzerRepository.findByAdresse(email);
         beitrag.setBenutzer(benutzer);
-        beitragRepository.save(beitrag);
+        this.beitragRepository.save(beitrag);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     //beitrag aktualisieren
-    public ResponseEntity<Beitrag> beitragAktualisieren(BeitragDto beitragDto, Long id) {
-        Beitrag beitrag = beitragRepository.findById(id).get();
-        if (beitragDto.getInhalt() != null && !beitragDto.getInhalt().isBlank()) {
-            beitrag.setInhalt(beitragDto.getInhalt());
+    public ResponseEntity<Beitrag> beitragAktualisieren(Beitrag beitrag, Long id) {
+        Beitrag Newbeitrag = beitragRepository.findById(id).get();
+        if (beitrag.getInhalt() != null && !beitrag.getInhalt().isBlank()) {
+            Newbeitrag.setInhalt(beitrag.getInhalt());
         }
-        if (beitragDto.getTitel() != null && !beitragDto.getTitel().isBlank()) {
-            beitrag.setTitel(beitragDto.getTitel());
+        if (beitrag.getTitel() != null && !beitrag.getTitel().isBlank()) {
+            Newbeitrag.setTitel(beitrag.getTitel());
         }
-        beitragRepository.save(beitrag);
+        beitragRepository.save(Newbeitrag);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -83,6 +78,18 @@ public class BeitragService {
             kategorieListe.add(kategorieEnum);
         }
         return kategorieListe;
+    }
+
+    //Beitrag bewerten
+    public int getAnzahlbewertung(Long id) {
+        Beitrag beitrag = beitragRepository.findById(id).get();
+        int count = 0;
+        if (!beitrag.getBewertung().isEmpty()) {
+            for (int i = 0; i < beitrag.getBewertung().size(); i++) {
+                count += beitrag.getBewertung().get(i).getAnzahlStr();
+            }
+        }
+        return count;
     }
 }
 

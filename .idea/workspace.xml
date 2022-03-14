@@ -4,16 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="Bewertung Klass bearbeiten">
+    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="Kategorie als String anpassen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BeitragController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BeitragController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BenutzerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BenutzerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/KommentarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/KommentarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Beitrag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Beitrag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Benutzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Benutzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BewertungDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BewertungDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BewertungController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BewertungController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BenutzerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BenutzerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BewertungService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BewertungService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/KommentarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/KommentarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BeitragController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BeitragController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/KommentarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/KommentarController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Beitrag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Beitrag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Bewertung.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Bewertung.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService$BewertungServiceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService$BewertungServiceBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/KommentarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/KommentarService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BewertungDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BewertungDto.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644078833832</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Kategorie als String anpassen">
+      <created>1644081826577</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1644081826577</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,36 +265,26 @@
     <MESSAGE value="get kategorieListe einfügen + name ändern" />
     <MESSAGE value="get ProfissionListe einfügen" />
     <MESSAGE value="Bewertung Klass bearbeiten" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bewertung Klass bearbeiten" />
+    <MESSAGE value="Kategorie als String anpassen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kategorie als String anpassen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/model/Benutzer.java</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/service/BenutzerService.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/BeitragController.java</url>
-          <line>17</line>
+          <line>16</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="12" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
