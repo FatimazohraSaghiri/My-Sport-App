@@ -4,25 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="Kategorie als String anpassen">
+    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="DTO Objekte zurücksetzen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BeitragController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BeitragController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BenutzerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BenutzerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/KommentarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/KommentarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Beitrag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Beitrag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Benutzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Benutzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Bewertung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Bewertung.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Kommentar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Kommentar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BenutzerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BenutzerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BewertungService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BewertungService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/KommentarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/KommentarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BeitragController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BeitragController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/KommentarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/KommentarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Beitrag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Beitrag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BenutzerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BenutzerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Benutzer$BenutzerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Benutzer$BenutzerBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Benutzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Benutzer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService$BeitragServiceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService$BeitragServiceBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService$BenutzerServiceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService$BenutzerServiceBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/KommentarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/KommentarService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BewertungDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BewertungDto.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644081826577</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="DTO Objekte zurücksetzen">
+      <created>1647291723354</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1647291723354</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,7 +268,8 @@
     <MESSAGE value="get ProfissionListe einfügen" />
     <MESSAGE value="Bewertung Klass bearbeiten" />
     <MESSAGE value="Kategorie als String anpassen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kategorie als String anpassen" />
+    <MESSAGE value="DTO Objekte zurücksetzen" />
+    <option name="LAST_COMMIT_MESSAGE" value="DTO Objekte zurücksetzen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,11 +1,13 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -14,7 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "kommentar")
-public class Kommentar {
+public class Kommentar implements Serializable {
     String inhalt;
     LocalDateTime erstellt_an;
 
@@ -25,9 +27,11 @@ public class Kommentar {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "benutzer_id", nullable = false)
+    @JsonIgnore
     private Benutzer benutzer;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "beitrag_id", nullable = false)
+    @JsonIgnore
     private Beitrag beitrag;
 }

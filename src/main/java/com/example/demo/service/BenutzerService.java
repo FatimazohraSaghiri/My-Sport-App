@@ -44,10 +44,10 @@ public class BenutzerService {
         return new ResponseEntity<String>("Sie sind erfolgreich angemeldet", HttpStatus.OK);
     }
 
-    // ProfilBenutzer bearbeitens
+    // Profil von Benutzer bearbeiten
     public ResponseEntity<Benutzer> updateBenutzer(Benutzer benutzer, Long id) {
         Benutzer Newbenutzer = this.benutzerRepository.findById(id).get();
-        if (benutzer.getNachname() != null) {
+        if (benutzer.getNachname() != null && !benutzer.getVorname().isBlank()) {
             Newbenutzer.setNachname(benutzer.getNachname());
         }
         if (benutzer.getVorname() != null && !benutzer.getVorname().isBlank()) {

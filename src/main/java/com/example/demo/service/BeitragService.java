@@ -68,7 +68,9 @@ public class BeitragService {
     }
 
     public List<Beitrag> all() {
-        return beitragRepository.findAll();
+        List<Beitrag> liste = new ArrayList<>();
+        liste.addAll(beitragRepository.findAll());
+        return liste;
     }
 
     //Kategorie Liste
