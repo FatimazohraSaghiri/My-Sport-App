@@ -4,7 +4,6 @@ import com.example.demo.model.Kommentar;
 import com.example.demo.repository.BeitragRepository;
 import com.example.demo.repository.BenutzerRepository;
 import com.example.demo.repository.KommentarRepository;
-import com.example.demo.web.dto.KommentarDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import org.springframework.http.HttpStatus;
@@ -22,25 +21,24 @@ public class KommentarService {
     private final BenutzerRepository benutzerRepository;
 
     //Kommentar verfassen
-    public ResponseEntity<String> kommentarVerfassen(Long BeitragId, KommentarDto kommentarDto) {
+    public ResponseEntity<String> kommentarVerfassen(Long BeitragId, Kommentar kommentar) {
         beitragRepository.findById(BeitragId).ifPresent(beitrag -> {
-            Kommentar kommentar = new Kommentar();
-            kommentar.setInhalt(kommentarDto.getInhalt());
-            kommentar.setErstellt_an(LocalDateTime.now());
-            kommentar.setBeitrag(beitrag);
-            kommentar.setBenutzer(beitrag.getBenutzer());
-            kommentarRepository.save(kommentar);
+            Kommentar neukommentar = new Kommentar();
+            neukommentar.setInhalt(kommentar.getInhalt());
+            neukommentar.setErstellt_an(LocalDateTime.now());
+            neukommentar.setBeitrag(beitrag);
+            kommentarRepository.save(neukommentar);
         });
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     //Kommentar bearbeiten
-    public ResponseEntity<Kommentar> kommentarBearbeiten(Long id, KommentarDto kommentarDto) {
-        Kommentar kommentar = kommentarRepository.findKommentarById(id);
-        if (kommentarDto.getInhalt() != null && !kommentarDto.getInhalt().isBlank()) {
-            kommentar.setInhalt(kommentarDto.getInhalt());
+    public ResponseEntity<Kommentar> kommentarBearbeiten(Long id, Kommentar kommentar) {
+        Kommentar neukommentar = kommentarRepository.findKommentarById(id);
+        if (kommentar.getInhalt() != null && !kommentar.getInhalt().isBlank()) {
+            neukommentar.setInhalt(kommentar.getInhalt());
         }
-        kommentarRepository.save(kommentar);
+        kommentarRepository.save(neukommentar);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

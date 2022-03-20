@@ -43,4 +43,9 @@ public class BeitragController {
     public int getAnzahlbewertung(@PathVariable Long id) {
         return beitragService.getAnzahlbewertung(id);
     }
+
+    @GetMapping("/beitraegeList/{kategorie}")
+    List<Beitrag> beitragsuchen(@PathVariable KategorieEnum kategorie) {
+        return beitragService.beitragSuchen(kategorie);
+    }
 }

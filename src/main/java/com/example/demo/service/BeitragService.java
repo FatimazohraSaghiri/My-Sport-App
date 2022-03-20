@@ -21,7 +21,7 @@ public class BeitragService {
     private final BeitragRepository beitragRepository;
     private final BenutzerRepository benutzerRepository;
 
-    //Beitrag speichern
+    //Beitrag verfassen
     public ResponseEntity<Beitrag> addBeitrag(String email, Beitrag beitrag) {
         Benutzer benutzer = benutzerRepository.findByAdresse(email);
         beitrag.setBenutzer(benutzer);
@@ -50,22 +50,21 @@ public class BeitragService {
     }
 
     //Beitrag nach kategorie suchen
-    public ResponseEntity<Beitrag> beitragSuchen(String kategorie) {
+    public List<Beitrag> beitragSuchen(KategorieEnum kategorie) {
+        List<Beitrag> list = all();
+        List<Beitrag> neuList = new ArrayList<>();
         boolean gefunden = true;
-        for (KategorieEnum kategorieEnum : KategorieEnum.values()) {
-            if (KategorieEnum.values().equals(kategorie)) {
-                gefunden = true;
-                break;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getKategorie().equals(kategorie)) {
+                neuList.add(list.get(i));
             } else {
                 gefunden = false;
             }
         }
-        if (gefunden == true) {
-            return new ResponseEntity<>(HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+
+        return neuList;
     }
+
 
     public List<Beitrag> all() {
         List<Beitrag> liste = new ArrayList<>();
