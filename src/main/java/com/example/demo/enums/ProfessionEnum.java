@@ -1,5 +1,5 @@
 package com.example.demo.enums;
 
-public enum ProfissionEnum {
+public enum ProfessionEnum {
     TRAINER, SPORTLER
 }

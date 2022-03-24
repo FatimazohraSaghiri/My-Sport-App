@@ -28,4 +28,8 @@ public class Bewertung implements Serializable {
     @JoinColumn(name = "beitrag_id", nullable = false)
     @JsonIgnore
     private Beitrag beitrag;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "benutzer_id", nullable = false)
+    private Benutzer benutzer;
 }

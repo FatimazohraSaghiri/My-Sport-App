@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.enums.ProfissionEnum;
+import com.example.demo.enums.ProfessionEnum;
 import com.example.demo.model.Benutzer;
 import com.example.demo.service.BenutzerService;
 import com.example.demo.web.dto.BenutzerDto;
@@ -36,8 +36,8 @@ public class BenutzerController {
         return benutzerService.getBenutzer(email);
     }
 
-    @GetMapping("/profission")
-    public List<ProfissionEnum> profissionEnumList() {
-        return benutzerService.profissionEnumList();
+    @GetMapping("/profession")
+    public List<ProfessionEnum> professionEnumList() {
+        return benutzerService.professionEnumList();
     }
 }

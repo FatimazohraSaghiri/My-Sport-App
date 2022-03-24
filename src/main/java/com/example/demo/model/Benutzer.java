@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.example.demo.enums.ProfessionEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
@@ -30,6 +31,9 @@ public class Benutzer implements Serializable {
     @JsonIgnore
     private List<Kommentar> kommentars = new ArrayList<>();
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "benutzer")
+    @JsonIgnore
+    private List<Bewertung> bewertungs = new ArrayList<>();
     private String vorname;
 
     private String nachname;
@@ -42,6 +46,10 @@ public class Benutzer implements Serializable {
 
     private String beschreibung;
 
+    @Column
+    @Enumerated(EnumType.STRING)
+    @NonNull
+    private ProfessionEnum professionEnum;
     private boolean enabled;
 }
 

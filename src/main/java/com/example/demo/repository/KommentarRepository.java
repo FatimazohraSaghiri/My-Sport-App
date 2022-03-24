@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface KommentarRepository extends JpaRepository<Kommentar, Long> {
-    public Kommentar findKommentarById(Long id);
 }
 

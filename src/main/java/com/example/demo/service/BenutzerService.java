@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.enums.ProfissionEnum;
+import com.example.demo.enums.ProfessionEnum;
 import com.example.demo.model.Benutzer;
 import com.example.demo.repository.BenutzerRepository;
 import com.example.demo.web.dto.BeitragDto;
@@ -97,12 +97,12 @@ public class BenutzerService {
     }
 
     //Kategorie User
-    public List<ProfissionEnum> profissionEnumList() {
-        List<ProfissionEnum> profissionEnums = new ArrayList<>();
-        for (ProfissionEnum profissionEnum : ProfissionEnum.values()) {
-            profissionEnums.add(profissionEnum);
+    public List<ProfessionEnum> professionEnumList() {
+        List<ProfessionEnum> professionEnums = new ArrayList<>();
+        for (ProfessionEnum professionEnum : ProfessionEnum.values()) {
+            professionEnums.add(professionEnum);
         }
-        return profissionEnums;
+        return professionEnums;
     }
 
 }

@@ -12,8 +12,8 @@ public class KommentarController {
     private final KommentarService kommentarService;
 
     @PostMapping("/kommentar/add/{idBeitrag}")
-    public ResponseEntity<String> KommentarEinfuegen(@PathVariable Long idBeitrag, @RequestBody Kommentar kommentar) {
-        return kommentarService.kommentarVerfassen(idBeitrag, kommentar);
+    public ResponseEntity<String> KommentarEinfuegen(@PathVariable Long idBeitrag, @PathVariable Long idBenutzer, @RequestBody Kommentar kommentar) {
+        return kommentarService.kommentarVerfassen(idBeitrag, idBenutzer, kommentar);
     }
 
     @PostMapping("kommentar/aktualisieren/{id}")

@@ -38,6 +38,9 @@ public class BeitragService {
         if (beitrag.getTitel() != null && !beitrag.getTitel().isBlank()) {
             Newbeitrag.setTitel(beitrag.getTitel());
         }
+        if (beitrag.getKategorie() != null) {
+            Newbeitrag.setKategorie(beitrag.getKategorie());
+        }
         beitragRepository.save(Newbeitrag);
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -50,18 +53,15 @@ public class BeitragService {
     }
 
     //Beitrag nach kategorie suchen
-    public List<Beitrag> beitragSuchen(KategorieEnum kategorie) {
+    public List<Beitrag> beitragSuchen(String kategorie) {
         List<Beitrag> list = all();
         List<Beitrag> neuList = new ArrayList<>();
-        boolean gefunden = true;
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getKategorie().equals(kategorie)) {
-                neuList.add(list.get(i));
-            } else {
-                gefunden = false;
+            if (list.get(i).getKategorie().name().equals(kategorie)) {
+                Beitrag beitrag = list.get(i);
+                neuList.add(beitrag);
             }
         }
-
         return neuList;
     }
 

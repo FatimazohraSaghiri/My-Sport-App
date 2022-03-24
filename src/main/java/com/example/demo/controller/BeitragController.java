@@ -45,7 +45,7 @@ public class BeitragController {
     }
 
     @GetMapping("/beitraegeList/{kategorie}")
-    List<Beitrag> beitragsuchen(@PathVariable KategorieEnum kategorie) {
+    List<Beitrag> beitragsuchen(@PathVariable String kategorie) {
         return beitragService.beitragSuchen(kategorie);
     }
 }
