@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class BewertungController {
     private final BewertungService bewertungService;
 
-    @PostMapping("/bewertung/{idBeitrag}")
-    public ResponseEntity<Bewertung> addBewertung(@PathVariable Long idBeitrag, @RequestBody Bewertung bewertung) throws NotFoundException {
-        return bewertungService.beitragBewerten(idBeitrag, bewertung);
+    @PostMapping("/bewertung/{idBeitrag}/{idBenutzer}")
+    public ResponseEntity<String> addBewertung(@PathVariable Long idBeitrag, @PathVariable Long idBenutzer, @RequestBody Bewertung bewertung) throws NotFoundException {
+        return bewertungService.beitragBewerten(idBeitrag, idBenutzer, bewertung);
     }
 
 }

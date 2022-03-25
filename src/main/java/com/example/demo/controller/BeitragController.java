@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.enums.KategorieEnum;
 import com.example.demo.model.Beitrag;
+import com.example.demo.model.Kommentar;
 import com.example.demo.service.BeitragService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -47,5 +48,10 @@ public class BeitragController {
     @GetMapping("/beitraegeList/{kategorie}")
     List<Beitrag> beitragsuchen(@PathVariable String kategorie) {
         return beitragService.beitragSuchen(kategorie);
+    }
+
+    @GetMapping("/kommentars/{id}")
+    List<Kommentar> kommentars(@PathVariable Long id) {
+        return beitragService.kommentars(id);
     }
 }

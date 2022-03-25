@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.*;
 public class KommentarController {
     private final KommentarService kommentarService;
 
-    @PostMapping("/kommentar/add/{idBeitrag}")
+    @PostMapping("/kommentar/add/{idBeitrag}/{idBenutzer}")
     public ResponseEntity<String> KommentarEinfuegen(@PathVariable Long idBeitrag, @PathVariable Long idBenutzer, @RequestBody Kommentar kommentar) {
         return kommentarService.kommentarVerfassen(idBeitrag, idBenutzer, kommentar);
     }
 
-    @PostMapping("kommentar/aktualisieren/{id}")
+    @PutMapping("kommentar/aktualisieren/{id}")
     public ResponseEntity<Kommentar> kommentarBearbeiten(@PathVariable Long id, @RequestBody Kommentar kommentar) {
         return kommentarService.kommentarBearbeiten(id, kommentar);
     }

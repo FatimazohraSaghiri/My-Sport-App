@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import com.example.demo.enums.ProfessionEnum;
 import com.example.demo.model.Benutzer;
 import com.example.demo.service.BenutzerService;
-import com.example.demo.web.dto.BenutzerDto;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +31,7 @@ public class BenutzerController {
     }
 
     @GetMapping("/{email}")
-    public BenutzerDto getBenutzer(@PathVariable String email) {
+    public Benutzer getBenutzer(@PathVariable String email) {
         return benutzerService.getBenutzer(email);
     }
 

@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.enums.KategorieEnum;
 import com.example.demo.model.Beitrag;
 import com.example.demo.model.Benutzer;
+import com.example.demo.model.Kommentar;
 import com.example.demo.repository.BeitragRepository;
 import com.example.demo.repository.BenutzerRepository;
 import lombok.AllArgsConstructor;
@@ -91,6 +92,15 @@ public class BeitragService {
             }
         }
         return count;
+    }
+
+    public List<Kommentar> kommentars(Long id) {
+        Beitrag beitrag = beitragRepository.findById(id).get();
+        List<Kommentar> kommentars = new ArrayList<>();
+        for (Kommentar kommentar : beitrag.getKommentar()) {
+            kommentars.add(kommentar);
+        }
+        return kommentars;
     }
 }
 
