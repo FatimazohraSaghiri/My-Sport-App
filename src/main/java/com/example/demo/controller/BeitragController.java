@@ -41,7 +41,7 @@ public class BeitragController {
     }
 
     @GetMapping("/bewerten/{id}")
-    public int getAnzahlbewertung(@PathVariable Long id) {
+    public long getAnzahlbewertung(@PathVariable Long id) {
         return beitragService.getAnzahlbewertung(id);
     }
 

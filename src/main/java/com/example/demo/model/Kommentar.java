@@ -25,7 +25,6 @@ public class Kommentar implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "benutzer_id", nullable = false)
-    @JsonIgnore
     private Benutzer benutzer;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

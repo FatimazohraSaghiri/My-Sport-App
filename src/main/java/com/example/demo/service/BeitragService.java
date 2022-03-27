@@ -83,7 +83,7 @@ public class BeitragService {
     }
 
     //Beitrag bewerten
-    public int getAnzahlbewertung(Long id) {
+    public long getAnzahlbewertung(Long id) {
         Beitrag beitrag = beitragRepository.findById(id).get();
         int count = 0;
         if (!beitrag.getBewertung().isEmpty()) {
@@ -91,16 +91,13 @@ public class BeitragService {
                 count += beitrag.getBewertung().get(i).getAnzahlStr();
             }
         }
-        return count;
+        long durschnitt = count / beitrag.getBewertung().size();
+        return durschnitt;
     }
 
     public List<Kommentar> kommentars(Long id) {
         Beitrag beitrag = beitragRepository.findById(id).get();
-        List<Kommentar> kommentars = new ArrayList<>();
-        for (Kommentar kommentar : beitrag.getKommentar()) {
-            kommentars.add(kommentar);
-        }
-        return kommentars;
+        return beitrag.getKommentar();
     }
 }
 

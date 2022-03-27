@@ -2,13 +2,9 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Bewertung;
 import com.example.demo.service.BewertungService;
-import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -16,8 +12,12 @@ public class BewertungController {
     private final BewertungService bewertungService;
 
     @PostMapping("/bewertung/{idBeitrag}/{idBenutzer}")
-    public ResponseEntity<String> addBewertung(@PathVariable Long idBeitrag, @PathVariable Long idBenutzer, @RequestBody Bewertung bewertung) throws NotFoundException {
+    public ResponseEntity<String> addBewertung(@PathVariable Long idBeitrag, @PathVariable Long idBenutzer, @RequestBody Bewertung bewertung) {
         return bewertungService.beitragBewerten(idBeitrag, idBenutzer, bewertung);
     }
 
+    @DeleteMapping("/bewertung/loeschen/{id}")
+    public ResponseEntity<Bewertung> bewertungLoeschen(@PathVariable Long id) {
+        return bewertungService.bewertungLoeschen(id);
+    }
 }

@@ -1,11 +1,13 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Beitrag;
 import com.example.demo.model.Bewertung;
 import com.example.demo.repository.BeitragRepository;
 import com.example.demo.repository.BenutzerRepository;
 import com.example.demo.repository.BewertungRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -22,32 +24,38 @@ public class BewertungService {
 
 
     public ResponseEntity<String> beitragBewerten(Long idBeitrag, Long idBenutzer, Bewertung bewertung) {
-        boolean gefunden;
-        beitragRepository.findById(idBeitrag).ifPresent(beitrag -> {
+        Beitrag beitrag = beitragRepository.findById(idBeitrag).get();
+        List<Bewertung> bewertungList = beitrag.getBewertung();
+        boolean gefunden = false;
+        for (Bewertung bewertung1 : bewertungList) {
 
-            List<Bewertung> bewertungList = beitrag.getBewertung();
-            for (Bewertung bewertung1 : bewertungList) {
-                if (bewertung.getBenutzer().equals(benutzerRepository.getById(idBenutzer))) {
-                    //gefunden = false;
-                    break;
-                    //return new ResponseEntity<String>("Sie haben schon diesen Beitrag bewertet ", HttpStatus.NOT_ACCEPTABLE);
-                }
+            if (bewertung1.getBenutzer() != null && bewertung1.getBenutzer().equals(benutzerRepository.getById(idBenutzer))) {
+                gefunden = true;
+                break;
             }
+        }
+        if (gefunden) {
+            return new ResponseEntity<String>("Sie haben schon diesen Beitrag bewertet ", HttpStatus.NOT_ACCEPTABLE);
+        } else {
             Bewertung neubewertung = new Bewertung();
             neubewertung.setAnzahlStr(bewertung.getAnzahlStr());
             neubewertung.setDatum(LocalDateTime.now());
             neubewertung.setBeitrag(beitrag);
             neubewertung.setBenutzer(benutzerRepository.findById(idBenutzer).get());
             bewertungRepository.save(neubewertung);
-            //gefunden = true;
-        });
-        /*if () {
-            return new ResponseEntity<String>("Bewertung ist Erfolgreich ", HttpStatus.NOT_ACCEPTABLE);
-        } else {
-            return new ResponseEntity<String>("Sie haben an diesem Beitrag schon bewertet", HttpStatus.NOT_ACCEPTABLE);
-        }*/
-        return null;
+            return new ResponseEntity<String>("Bewertung ist Erfolgreich ", HttpStatus.ACCEPTED);
+
+        }
+    }
+
+    //Bewertung löschen
+    public ResponseEntity<Bewertung> bewertungLoeschen(Long id) {
+        Bewertung bewertung = bewertungRepository.findById(id).get();
+        bewertungRepository.delete(bewertung);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
+
+
 
 
