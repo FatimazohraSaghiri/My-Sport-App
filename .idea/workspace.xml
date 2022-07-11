@@ -4,47 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="Get Kommentars Methode anfertigen">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2021_12_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2021_12_07__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_12_2021_23_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_12_2021_23_59__Changes_.xml" afterDir="false" />
+    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="Code Kommentieren">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BenutzerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BenutzerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Bewertung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Bewertung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BenutzerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BenutzerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BewertungService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BewertungService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/DemoApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BeitragController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BeitragController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BenutzerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BenutzerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BewertungController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BewertungController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/KommentarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/KommentarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/enums/KategorieEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/enums/KategorieEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Beitrag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Beitrag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Benutzer$BenutzerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Benutzer$BenutzerBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Benutzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Benutzer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Besucher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Besucher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Bewertung.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Bewertung.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/model/Kommentar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/model/Kommentar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repository/BeitragRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repository/BeitragRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repository/BenutzerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repository/BenutzerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repository/BewertungRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repository/BewertungRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repository/KommentarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repository/KommentarRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService$BeitragServiceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService$BeitragServiceBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BeitragDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BenutzerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BewertungDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/KommentarDto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService$BenutzerServiceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService$BenutzerServiceBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService$BewertungServiceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService$BewertungServiceBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/KommentarService$KommentarServiceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/KommentarService$KommentarServiceBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/KommentarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/KommentarService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BeitragDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BeitragDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BenutzerDto$BenutzerDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BenutzerDto$BenutzerDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BenutzerDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BenutzerDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BewertungDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BewertungDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/KommentarDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/KommentarDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/DemoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/DemoApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BeitragDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BenutzerDto$BenutzerDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BenutzerDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BewertungDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/KommentarDto.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648217066677</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Code Kommentieren">
+      <created>1657549786512</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1657549786512</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +348,8 @@
     <MESSAGE value="Kommentar, Bewertung Service Klassen bearbeiten" />
     <MESSAGE value="Get Benutzer Methode wiederherstellen" />
     <MESSAGE value="Get Kommentars Methode anfertigen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get Kommentars Methode anfertigen" />
+    <MESSAGE value="Code Kommentieren" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Kommentieren" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
