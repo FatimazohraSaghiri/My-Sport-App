@@ -58,7 +58,8 @@ public class BeitragService {
         List<Beitrag> list = all();
         List<Beitrag> neuList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getKategorie().name().equals(kategorie)) {
+            // überprüfen ob Kategorie leer und gleich wie eingegebene Kategorie ist
+            if (list.get(i).getKategorie() != null && list.get(i).getKategorie().toString().equals(kategorie)) {
                 Beitrag beitrag = list.get(i);
                 neuList.add(beitrag);
             }
@@ -66,7 +67,7 @@ public class BeitragService {
         return neuList;
     }
 
-
+    //Output von allen beiträge
     public List<Beitrag> all() {
         List<Beitrag> liste = new ArrayList<>();
         liste.addAll(beitragRepository.findAll());
@@ -95,6 +96,7 @@ public class BeitragService {
         return durschnitt;
     }
 
+    ////Output von allen Kommentare
     public List<Kommentar> kommentars(Long id) {
         Beitrag beitrag = beitragRepository.findById(id).get();
         return beitrag.getKommentar();

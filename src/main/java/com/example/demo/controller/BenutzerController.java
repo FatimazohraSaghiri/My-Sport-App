@@ -39,4 +39,10 @@ public class BenutzerController {
     public List<ProfessionEnum> professionEnumList() {
         return benutzerService.professionEnumList();
     }
+
+    @GetMapping("/sperren/{id}")
+    public ResponseEntity<String> benutzersperren(@PathVariable Long id) {
+        return benutzerService.benutzersperren(id);
+    }
+
 }

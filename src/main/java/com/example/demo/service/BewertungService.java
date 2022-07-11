@@ -22,7 +22,7 @@ public class BewertungService {
     private final BenutzerRepository benutzerRepository;
     private final BewertungRepository bewertungRepository;
 
-
+    // Beitrag bewerten
     public ResponseEntity<String> beitragBewerten(Long idBeitrag, Long idBenutzer, Bewertung bewertung) {
         Beitrag beitrag = beitragRepository.findById(idBeitrag).get();
         List<Bewertung> bewertungList = beitrag.getBewertung();
@@ -34,6 +34,7 @@ public class BewertungService {
                 break;
             }
         }
+        // wenn man zum zweiten mal den Beitrag bewerten möchte
         if (gefunden) {
             return new ResponseEntity<String>("Sie haben schon diesen Beitrag bewertet ", HttpStatus.NOT_ACCEPTABLE);
         } else {

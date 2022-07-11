@@ -108,4 +108,15 @@ public class BenutzerService {
         return professionEnums;
     }
 
+    //Benutzer sperren
+    public ResponseEntity<String> benutzersperren(long id) {
+        Benutzer benutzer = benutzerRepository.findById(id).get();
+        if (benutzer.isEnabled()) {
+            benutzer.setEnabled(false);
+            return new ResponseEntity<>("benutzer ist erfolgreich gesperrt", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("benutzer ist schon gesperrt", HttpStatus.NOT_ACCEPTABLE);
+        }
+
+    }
 }

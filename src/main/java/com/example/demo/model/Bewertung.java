@@ -22,7 +22,7 @@ public class Bewertung implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "bewertung_id", insertable = false, updatable = true)
     private Long id;
-    private int anzahlStr;
+    private double anzahlStr;
     private LocalDateTime datum;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
