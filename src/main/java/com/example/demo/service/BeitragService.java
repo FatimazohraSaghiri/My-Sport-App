@@ -69,6 +69,7 @@ public class BeitragService {
 
     //Output von allen beiträge
     public List<Beitrag> all() {
+        List<Beitrag> listbeitraf = beitragRepository.findAll();
         List<Beitrag> liste = new ArrayList<>();
         liste.addAll(beitragRepository.findAll());
         return liste;

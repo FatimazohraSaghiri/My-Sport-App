@@ -6,6 +6,7 @@ import com.example.demo.model.Kommentar;
 import com.example.demo.service.BeitragService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,9 +31,11 @@ public class BeitragController {
         return beitragService.beitragloeschen(id);
     }
 
-    @GetMapping("/beitraege")
-    List<Beitrag> all() {
-        return beitragService.all();
+    @GetMapping("/beitraegeList")
+    String all(Model model) {
+        List<Beitrag> beitrags = beitragService.all();
+        model.addAttribute("beitraege", beitrags);
+        return "beitraegeList";
     }
 
     @GetMapping("/kategorieListe")

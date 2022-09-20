@@ -61,6 +61,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.22</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -68,8 +74,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.5.5</version>
             </plugin>
         </plugins>
     </build>
 
 </project>
+

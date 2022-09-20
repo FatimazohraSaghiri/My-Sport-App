@@ -4,19 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="Code Kommentieren">
+    <list default="true" id="31312c73-b5e2-48cb-9930-9ec15bcb4e10" name="Changes" comment="Dto Klassen löschen">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/config/CourtConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/CourtServletContainerInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/view/anmeldung_objekt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/view/beitraege_objekt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/anmeldungView.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/beitraegeList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/beitraegeList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_10.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BeitragDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BenutzerDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/BewertungDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/dto/KommentarDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BeitragController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BeitragController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BenutzerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/BenutzerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BenutzerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BenutzerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BeitragController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BeitragController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BenutzerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/BenutzerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BeitragService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BewertungService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BeitragDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BenutzerDto$BenutzerDtoBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BenutzerDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/BewertungDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/dto/KommentarDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService$BenutzerServiceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService$BenutzerServiceBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/BenutzerService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +51,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -82,9 +95,22 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="format.on.save" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
     <property name="optimize.imports.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.demo.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\saghiri Fatimazohra\Downloads\demo\src\main\webapp\WEB-INF\jsp" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.demo" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -92,7 +118,7 @@
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="PATTERN" value="com.example.demo.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -255,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657549786512</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Dto Klassen löschen">
+      <created>1657550405492</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1657550405492</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -349,7 +382,8 @@
     <MESSAGE value="Get Benutzer Methode wiederherstellen" />
     <MESSAGE value="Get Kommentars Methode anfertigen" />
     <MESSAGE value="Code Kommentieren" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Kommentieren" />
+    <MESSAGE value="Dto Klassen löschen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dto Klassen löschen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -361,13 +395,23 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/BeitragController.java</url>
-          <line>17</line>
+          <line>18</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/service/BeitragService.java</url>
           <line>59</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/BenutzerController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/BeitragController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <breakpoint type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />

@@ -1,19 +1,12 @@
 package com.example.demo.service;
 
-import com.example.demo.enums.ProfessionEnum;
-import com.example.demo.model.Beitrag;
 import com.example.demo.model.Benutzer;
-import com.example.demo.model.Kommentar;
 import com.example.demo.repository.BenutzerRepository;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Builder
 @AllArgsConstructor
@@ -69,7 +62,7 @@ public class BenutzerService {
     }
 
     // Output für alle Daten von Benutzer
-    public Benutzer getBenutzer(String email) {
+    /*public Benutzer getBenutzer(String email) {
         Benutzer benutzer = benutzerRepository.findByAdresse(email);
         Benutzer neubenutzer = new Benutzer();
         neubenutzer.setId(benutzer.getId());
@@ -118,5 +111,5 @@ public class BenutzerService {
             return new ResponseEntity<>("benutzer ist schon gesperrt", HttpStatus.NOT_ACCEPTABLE);
         }
 
-    }
+    }*/
 }

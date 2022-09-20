@@ -1,13 +1,10 @@
 package com.example.demo.controller;
 
-import com.example.demo.enums.ProfessionEnum;
 import com.example.demo.model.Benutzer;
 import com.example.demo.service.BenutzerService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -30,10 +27,10 @@ public class BenutzerController {
         return benutzerService.anmelden(benutzer);
     }
 
-    @GetMapping("/{email}")
-    public Benutzer getBenutzer(@PathVariable String email) {
-        return benutzerService.getBenutzer(email);
-    }
+    /* @GetMapping("/{email}")
+   * public Benutzer getBenutzer(@PathVariable String email) {
+         return benutzerService.getBenutzer(email);
+     }
 
     @GetMapping("/profession")
     public List<ProfessionEnum> professionEnumList() {
@@ -44,5 +41,5 @@ public class BenutzerController {
     public ResponseEntity<String> benutzersperren(@PathVariable Long id) {
         return benutzerService.benutzersperren(id);
     }
-
+*/
 }
